@@ -588,7 +588,7 @@ class Controller(QtCore.QObject):
     def killEmulator(self):
         if IS_WINDOWS:
             try:
-                args = ['taskkill', '/f', '/im', 'ggpofba-ng.exe']
+                args = ['taskkill', '/F', '/PID', os.getpid()]
                 Popen(args)
                 args = ['tskill', 'ggpofba-ng', '/a']
                 Popen(args)
